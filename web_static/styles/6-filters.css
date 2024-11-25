@@ -1,0 +1,27 @@
+.filters > div {
+    position: relative;
+    transition: all 0.9s;
+}
+
+.popover {
+    position: absolute;
+    left: 0;
+    top: 80%;
+    background-color: #FAFAFA;
+    width: 85%;
+    padding: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.filters > div:hover .popover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
