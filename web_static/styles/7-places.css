@@ -22,3 +22,7 @@
 .places h2 {
     font-size: 30px;
 }
+
+footer {
+    display: block;
+}
