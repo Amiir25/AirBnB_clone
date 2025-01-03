@@ -1,8 +1,11 @@
 .places {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .places h1 {
+    width: 100%;
     font-size: 30px;
     text-align: left;
     padding-left: 20px;
@@ -12,11 +15,12 @@
 .places > article {
     width: 390px;
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
     border: 1px solid #FF5A5F;
     border-radius: 4px;
     text-align: center;
-    display: inline-block;
+    display: block;
+
 }
 
 .places h2 {
@@ -24,5 +28,5 @@
 }
 
 footer {
-    display: block;
+    position: relative;
 }
