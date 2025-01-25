@@ -63,7 +63,7 @@ class BaseModel:
             created_at (datetime) - The current datetime when an instance
                                     is created
             updated_at (datetime) - The current datetime when an isnatnce
-                                    is updated
+                                   is updated
         """
 
         if kwargs:
@@ -73,7 +73,8 @@ class BaseModel:
                     value = datetime.fromisoformat(value)
 
                     # Initialize attributes from kwargs
-                    setattr(self, key, value)
+                    if key != '__class__':
+                        setattr(self, key, value)
 
         else:
             self.id = str(uuid.uuid4())
@@ -122,6 +123,7 @@ class BaseModel:
         # Convert 'created_at' and 'updated_at' to ISO format
         dict_rep['created_at'] = self.created_at.isoformat()
         dict_rep['updated_at'] = self.updated_at.isoformat()
+        dict_rep['__class__'] = self.__class__.__name__
 
         # Add the class name as __class__
         dict_rep['__class__'] = self.__class__.__name__

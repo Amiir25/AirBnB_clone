@@ -9,6 +9,7 @@ This module provides a `State` class whcich inherits the
 
 from models.base_model import BaseModel
 
+
 class State(BaseModel):
     """
     Defines a class that inherits the `BaseModel` class

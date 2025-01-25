@@ -55,7 +55,8 @@ class TestHBNBCommand(unittest.TestCase):
 
         with patch('sys.stdout', new=StringIO()) as output:
             HBNBCommand().onecmd("create InvalidClass")
-            self.assertEqual(output.getvalue().strip(), "** class doesn't exist **")
+            self.assertEqual(output.getvalue().strip(),
+                             "** class doesn't exist **")
 
     def test_show(self):
         """Test `show` command to display an object."""
@@ -71,14 +72,16 @@ class TestHBNBCommand(unittest.TestCase):
 
         with patch('sys.stdout', new=StringIO()) as output:
             HBNBCommand().onecmd("show InvalidClass 1234")
-            self.assertEqual(output.getvalue().strip(), "** class doesn't exist **")
+            self.assertEqual(output.getvalue().strip(),
+                             "** class doesn't exist **")
 
     def test_show_invalid_id(self):
         """Test `show` command with invalid ID."""
 
         with patch('sys.stdout', new=StringIO()) as output:
             HBNBCommand().onecmd("show User 1234")
-            self.assertEqual(output.getvalue().strip(), "** no instance found **")
+            self.assertEqual(output.getvalue().strip(),
+                             "** no instance found **")
 
     def test_destroy(self):
         """Test `destroy` command."""
